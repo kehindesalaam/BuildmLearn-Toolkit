@@ -248,7 +248,10 @@ QList<BasicmLearningItem> BasicmLearningEditor::activeItems() const {
 }
 
 bool BasicmLearningEditor::canGenerateApplications() {
-  return !activeItems().isEmpty();
+  return
+      !activeItems().isEmpty() &&
+      !m_ui->m_txtAuthor->lineEdit()->text().simplified().isEmpty() &&
+      !m_ui->m_txtName->lineEdit()->text().simplified().isEmpty();
 }
 
 QString BasicmLearningEditor::generateBundleData() {
@@ -317,8 +320,11 @@ void BasicmLearningEditor::saveItem() {
   m_activeItem.setTitle(m_ui->m_txtTitle->lineEdit()->text());
   m_activeItem.setDescription(m_ui->m_txtDescription->toPlainText());
 
-  m_ui->m_listItems->currentItem()->setData(Qt::UserRole, QVariant::fromValue(m_activeItem));
-  m_ui->m_listItems->currentItem()->setText(m_activeItem.title());
+  if(m_ui->m_listItems->currentItem() != NULL )
+  {
+    m_ui->m_listItems->currentItem()->setData(Qt::UserRole, QVariant::fromValue(m_activeItem));
+    m_ui->m_listItems->currentItem()->setText(m_activeItem.title());
+  }
 
   emit changed();
 }

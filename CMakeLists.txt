@@ -447,6 +447,14 @@ set(APP_SOURCES
   src/templates/learnspellings/learnspellingssimulator.cpp
   src/templates/learnspellings/learnspellingsitem.cpp
 
+  src/templates/sample/sampleentrypoint.cpp
+  src/templates/sample/samplecore.cpp
+  src/templates/sample/sampleeditor.cpp
+  src/templates/sample/samplesimulator.cpp
+  src/templates/sample/samplequestion.cpp
+  src/templates/sample/sampleitem.cpp
+
+
   src/main.cpp
 )
 
@@ -514,6 +522,13 @@ set(APP_HEADERS
   src/templates/learnspellings/learnspellingscore.h
   src/templates/learnspellings/learnspellingseditor.h
   src/templates/learnspellings/learnspellingssimulator.h
+
+  src/templates/sample/sampleentrypoint.h
+  src/templates/sample/samplecore.h
+  src/templates/sample/sampleeditor.h
+  src/templates/sample/samplesimulator.h
+  src/templates/sample/sampleitem.h
+
 )
 
 # APP form files.
@@ -540,6 +555,10 @@ set(APP_FORMS
 
   src/templates/learnspellings/learnspellingseditor.ui
   src/templates/learnspellings/learnspellingssimulator.ui
+
+  src/templates/sample/sampleeditor.ui
+  src/templates/sample/samplesimulator.ui
+  src/templates/sample/sampleitem.ui
 )
 
 # APP translations.

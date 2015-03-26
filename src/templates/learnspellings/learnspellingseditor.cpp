@@ -79,7 +79,7 @@ LearnSpellingsEditor::LearnSpellingsEditor(TemplateCore *core, QWidget *parent)
 
   connect(m_ui->m_txtDescription->lineEdit(), SIGNAL(textChanged(QString)), this, SLOT(checkDescription(QString)));
   connect(m_ui->m_txtTitle->lineEdit(), SIGNAL(textChanged(QString)), this, SLOT(checkTitle(QString)));
-  connect(m_ui->m_btnItemAdd, SIGNAL(clicked()), this, SLOT(addSampleWord()));
+  connect(m_ui->m_btnItemAdd, SIGNAL(clicked()), this, SLOT(addQuizWord()));
   connect(m_ui->m_btnItemRemove, SIGNAL(clicked()), this, SLOT(removeSelectedWord()));
   connect(m_ui->m_txtDescription->lineEdit(), SIGNAL(textEdited(QString)), this, SLOT(saveWord()));
   connect(m_ui->m_txtTitle->lineEdit(), SIGNAL(textEdited(QString)), this, SLOT(saveWord()));
@@ -151,7 +151,7 @@ bool LearnSpellingsEditor::loadBundleData(const QString &bundle_data) {
         continue;
       }
       else {
-        addSampleWord(word, meaning);
+        addQuizWord(word, meaning);
       }
     }
     else {
@@ -166,7 +166,7 @@ bool LearnSpellingsEditor::loadBundleData(const QString &bundle_data) {
   return true;
 }
 
-void LearnSpellingsEditor::addSampleWord(const QString &title, const QString &description) {
+void LearnSpellingsEditor::addQuizWord(const QString &title, const QString &description) {
   int marked_item = m_ui->m_listItems->currentRow();
   LearnSpellingsItem new_item;
   QListWidgetItem *new_item_view = new QListWidgetItem();
@@ -194,8 +194,8 @@ void LearnSpellingsEditor::addSampleWord(const QString &title, const QString &de
   updateItemCount();
 }
 
-void LearnSpellingsEditor::addSampleWord() {
-  addSampleWord(tr("cat"), tr("Cats are animals which are hated by dogs."));
+void LearnSpellingsEditor::addQuizWord() {
+  addQuizWord(tr("cat"), tr("Cats are animals which are hated by dogs."));
   launch();
   emit changed();
 }

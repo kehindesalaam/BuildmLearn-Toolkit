@@ -63,8 +63,8 @@ class LearnSpellingsEditor : public TemplateEditor {
     QString authorName();
 
   private slots:
-    void addSampleWord(const QString &title, const QString &description);
-    void addSampleWord();
+    void addQuizWord(const QString &title, const QString &description);
+    void addQuizWord();
     void removeSelectedWord();
     void saveWord();
     void displayWord(int index);
